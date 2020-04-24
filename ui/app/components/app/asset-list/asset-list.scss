@@ -70,3 +70,19 @@ $wallet-balance-breakpoint-range: "screen and (min-width: #{$break-large}) and (
   border: 1px solid $alto;
   background: $white;
 }
+
+.token__list, .collectable__list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media screen and (max-width: 575px) {
+    height: 11em;
+
+  }
+}
+

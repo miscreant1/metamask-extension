@@ -45,6 +45,7 @@ $wallet-view-bg: $alabaster;
   background: $wallet-view-bg;
   z-index: 200;
   position: relative;
+  scrollbar-width: none;
 
   [dir='rtl'] & i.fa.fa-clipboard {
     /*rtl:ignore*/

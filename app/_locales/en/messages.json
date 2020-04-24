@@ -309,6 +309,9 @@
   "chromeRequiredForHardwareWallets": {
     "message": "You need to use MetaMask on Google Chrome in order to connect to your Hardware Wallet."
   },
+  "collectables": {
+    "message": "Collectables"
+  },
   "confirm": {
     "message": "Confirm"
   },

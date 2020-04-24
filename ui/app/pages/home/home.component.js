@@ -4,6 +4,7 @@ import Media from 'react-media'
 import { Redirect, Route } from 'react-router-dom'
 import { formatDate } from '../../helpers/utils/util'
 import AssetList from '../../components/app/asset-list'
+import CollectablesList from '../../components/app/collectables-list'
 import HomeNotification from '../../components/app/home-notification'
 import DaiMigrationNotification from '../../components/app/dai-migration-component'
 import MultipleNotifications from '../../components/app/multiple-notifications'
@@ -259,6 +260,9 @@ export default class Home extends PureComponent {
                       <Tabs>
                         <Tab className="home__tab" data-testid="home__asset-tab" name="Assets">
                           <AssetList />
+                        </Tab>
+                        <Tab className="home__tab" data-testid="home__collectible-tab" name="Collectables">
+                          <CollectablesList />
                         </Tab>
                         <Tab className="home__tab" data-testid="home__history-tab" name="History">
                           <TransactionList />

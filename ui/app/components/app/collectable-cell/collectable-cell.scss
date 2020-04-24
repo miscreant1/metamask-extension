@@ -1,0 +1,32 @@
+.collectable-cell {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 20px 24px;
+  cursor: pointer;
+  transition: linear 200ms;
+  background-color: rgba($wallet-balance-bg, 0);
+  position: relative;
+  flex: 1;
+  min-width: 0;
+
+  &__collectable-amount, &__collectable-name {
+    margin-right: 4px;
+    font-size: 1.5rem;
+    flex: 0 0 auto;
+
+    @media #{$wallet-balance-breakpoint-range} {
+      font-size: 95%;
+    }
+  }
+
+  &__identicon {
+    margin-right: 15px;
+    border: '1px solid #dedede';
+    min-width: 50px;
+
+    @media #{$wallet-balance-breakpoint-range} {
+      margin-right: 4%;
+    }
+  }
+}

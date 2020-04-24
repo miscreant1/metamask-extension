@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import BalanceComponent from '../../ui/balance'
 import AddTokenButton from '../add-token-button'
 import TokenList from '../token-list'
+import CollectableList from '../collectables-list'
 import { ADD_TOKEN_ROUTE } from '../../../helpers/constants/routes'
 
 export default class AssetList extends Component {
@@ -77,7 +78,7 @@ export default class AssetList extends Component {
   render () {
     const { setSelectedToken } = this.props
     return (
-      <>
+      <div className="token__list">
         {this.renderWalletBalance()}
         <TokenList
           onTokenClick={(tokenAddress) => {
@@ -92,7 +93,7 @@ export default class AssetList extends Component {
           }}
         />
         {this.renderAddToken()}
-      </>
+      </div>
     )
   }
 }
