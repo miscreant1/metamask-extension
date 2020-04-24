@@ -4,7 +4,6 @@ import React, { Component } from 'react'
 import BalanceComponent from '../../ui/balance'
 import AddTokenButton from '../add-token-button'
 import TokenList from '../token-list'
-import CollectableList from '../collectables-list'
 import { ADD_TOKEN_ROUTE } from '../../../helpers/constants/routes'
 
 export default class AssetList extends Component {
