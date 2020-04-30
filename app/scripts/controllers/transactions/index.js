@@ -233,6 +233,10 @@ export default class TransactionController extends EventEmitter {
 
     const { transactionCategory, getCodeResponse } = await this._determineTransactionCategory(txParams)
     txMeta.transactionCategory = transactionCategory
+
+    // ensure value
+    txParams.value = txParams.value ? ethUtil.addHexPrefix(txParams.value) : '0x0'
+
     this.addTx(txMeta)
     this.emit('newUnapprovedTx', txMeta)
 
@@ -262,9 +266,6 @@ export default class TransactionController extends EventEmitter {
   async addTxGasDefaults (txMeta, getCodeResponse) {
     const txParams = txMeta.txParams
 
-    // ensure value
-
-    txParams.value = txParams.value ? ethUtil.addHexPrefix(txParams.value) : '0x0'
     txMeta.gasPriceSpecified = Boolean(txParams.gasPrice)
     let gasPrice = txParams.gasPrice
     if (!gasPrice) {
