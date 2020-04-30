@@ -38,7 +38,7 @@ describe('MetaMask', function () {
       }
     }
     if (this.currentTest.state === 'failed') {
-      await driver.verboseReportOnFailure(this.currentTest)
+      await driver.verboseReportOnFailure(this.currentTest.title)
     }
   })
 
@@ -732,11 +732,13 @@ describe('MetaMask', function () {
       await driver.switchToWindow(extension)
       await driver.delay(largeDelayMs * 2)
 
-      await driver.clickElement(By.css('.transaction-list-item'))
+      await driver.clickElement(By.css('.transaction-list__pending-transactions .transaction-list-item'))
       await driver.delay(regularDelayMs)
 
       await driver.clickElement(By.xpath(`//button[contains(text(), 'Confirm')]`))
       await driver.delay(regularDelayMs)
+
+      await driver.verboseReportOnFailure('after-click')
 
       await driver.wait(async () => {
         const confirmedTxes = await driver.findElements(By.css('.transaction-list__completed-transactions .transaction-list-item'))

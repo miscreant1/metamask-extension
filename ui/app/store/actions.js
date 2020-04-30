@@ -807,6 +807,9 @@ export function updateAndApproveTx (txData) {
     dispatch(showLoadingIndication())
     return new Promise((resolve, reject) => {
       background.updateAndApproveTransaction(txData, (err) => {
+        if (err) {
+          console.error(err)
+        }
         dispatch(updateTransactionParams(txData.id, txData.txParams))
         dispatch(clearSend())
 
@@ -832,6 +835,7 @@ export function updateAndApproveTx (txData) {
         return txData
       })
       .catch((err) => {
+        console.error(err)
         dispatch(hideLoadingIndication())
         return Promise.reject(err)
       })

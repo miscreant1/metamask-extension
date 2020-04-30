@@ -498,6 +498,7 @@ export default class ConfirmTransactionBase extends Component {
                 })
               })
               .catch((error) => {
+                console.error(error)
                 this.setState({
                   submitting: false,
                   submitError: error.message,
